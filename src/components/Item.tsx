@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import { FC } from "react";
 import { Button } from "@mui/material";
 import { IShopItem } from "../interfaces/Items.interface";
 import { Wrapper } from "../css/item.styles";

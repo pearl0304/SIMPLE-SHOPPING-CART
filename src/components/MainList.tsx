@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
 import { database } from "../database/products";
 import { Item } from "./Item";
-import { IShopItem } from "../interfaces/Items.interface";
 import { Wrapper } from "../css/mainList.styles";
 
 export const MainList = () => {
