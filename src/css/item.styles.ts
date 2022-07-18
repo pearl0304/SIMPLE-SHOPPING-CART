@@ -4,26 +4,38 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 100%;
   align-items: center;
   font-size: 14px;
 
-  button {
-    border-radius: 0 0 20px 20px;
+  .container {
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-image {
+    width: 300px;
+    height: 330px;
+    margin-bottom: 20px;
+  }
+
+  .item-info {
+    margin-bottom: 10px;
+    height: 100px;
+  }
+
+  .item-info h3 {
+    margin-bottom: 20px;
   }
 
   img {
-    max-width: 250px;
-    object-fit: cover;
-    border-radius: 20px 20px 0 0;
-  }
-
-  div {
-    padding: 1rem;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
-  div h3 {
-    margin: 20px 0 20px 0;
+  button {
+    bottom: 0;
   }
 `;

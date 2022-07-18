@@ -13,12 +13,16 @@ export const Item: FC<Props> = ({ item }) => {
 
   return (
     <Wrapper>
-      <img src={item.image} alt={item.title} />
-      <div>
-        <h3>{item.title}</h3>
-        <h3>{numberFormat(item.price)}원</h3>
+      <div className="container">
+        <div className="item-image">
+          <img src={item.image} alt={item.title} />
+        </div>
+        <div className="item-info">
+          <h3>{item.title}</h3>
+          <h3>{numberFormat(item.price)}원</h3>
+        </div>
+        <Button>Add To Cart</Button>
       </div>
-      <Button>Add To Cart</Button>
     </Wrapper>
   );
 };
