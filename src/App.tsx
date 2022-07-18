@@ -3,6 +3,7 @@ import React from "react";
 import { Header } from "./components/Header";
 import { Navbar } from "./components/Navbar";
 import { MainList } from "./components/MainList";
+import { Footer } from "./components/Footer";
 //Style
 import { Wrapper } from "./css/App.styles";
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Navbar />
       <MainList />
+      <Footer />
     </Wrapper>
   );
 }
