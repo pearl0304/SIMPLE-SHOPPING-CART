@@ -104,7 +104,7 @@ export const database = [
     title: "라인프렌즈 BT21 RJ BABY 차량용 스마트폰 고속 충전 거치대",
   },
   {
-    id: 6876937263,
+    id: 6876937264,
     category: "KOYA",
     description: "내 차의 힐링템 BT21 KOYA 차량용 고속 무선 충전 거치대",
     image: "https://shop-phinf.pstatic.net/20220524_29/1653354814805jjY1A_JPEG/21371229_74731737.jpg?type=m510",

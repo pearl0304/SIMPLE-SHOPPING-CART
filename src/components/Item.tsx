@@ -10,6 +10,7 @@ export const Item: FC<Props> = ({ item }) => {
   const numberFormat = (price: number): string => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
+
   return (
     <Wrapper>
       <img src={item.image} alt={item.title} />
