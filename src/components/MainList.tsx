@@ -10,7 +10,7 @@ export const MainList = () => {
     <Wrapper>
       <Grid container spacing={5}>
         {database.map((item) => (
-          <Grid item key={item.id} xs={12} sm={4}>
+          <Grid item key={item.id} xs={12} sm={3}>
             <Item item={item} />
           </Grid>
         ))}

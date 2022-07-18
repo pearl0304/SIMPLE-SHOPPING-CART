@@ -10,7 +10,7 @@ export const Header = () => {
         <div>
           <p>R</p>
         </div>
-        <div>RINE FRIENDS</div>
+        <div className="logo">RINE FRIENDS</div>
       </div>
       <div className="header-right">
         <div>

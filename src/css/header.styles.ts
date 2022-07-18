@@ -24,6 +24,11 @@ export const Wrappter = styled.header`
     text-align: center;
   }
 
+  .header-left .logo {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
   .header-left div:first-child p {
     padding: 2px;
   }
