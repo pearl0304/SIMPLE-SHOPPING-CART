@@ -1,21 +1,22 @@
-import { FC, useState } from "react";
-import { CartList } from "./CartList";
+import { FC, useState, useEffect } from "react";
 import { Button } from "@mui/material";
-import { IShopItem } from "../interfaces/Items.interface";
+import { IShopItem, ICartItem } from "../interfaces/Items.interface";
 import { Wrapper } from "../css/item.styles";
 import Swal from "sweetalert2";
+import { JoinFull } from "@mui/icons-material";
 
 type Props = {
   item: IShopItem;
 };
 export const Item: FC<Props> = ({ item }) => {
+  const [cartList, setCartList] = useState<ICartItem[]>([]);
   const numberFormat = (price: number): string => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   const onClickButton = (clickedItem: IShopItem) => {
     Swal.fire({
-      title: `장바구니에 ${clickedItem.title} 을 추가하시겠습니까?`,
+      title: `장바구니에 추가하시겠습니까?`,
       showDenyButton: true,
       confirmButtonText: "ADD",
       denyButtonText: "CANCLE",
@@ -29,9 +30,9 @@ export const Item: FC<Props> = ({ item }) => {
     });
   };
 
-  const handleAddToCart = (clickedItem: IShopItem) => {
-    <CartList item={clickedItem} />;
-  };
+  const handleAddToCart = (clickedItem: IShopItem) => {};
+
+  console.log("cartList", cartList);
 
   return (
     <Wrapper>
