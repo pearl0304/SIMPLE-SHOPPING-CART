@@ -30,7 +30,11 @@ export const Item: FC<Props> = ({ item }) => {
     });
   };
 
-  const handleAddToCart = (clickedItem: IShopItem) => {};
+  const handleAddToCart = (clickedItem: IShopItem) => {
+    // 일단 카트 리스트에 클릭한 아이템 넣기
+    // 카트 리스트 localstorage 에 저장하기
+    // 나중에 ) id가 중복되는 아이템은 amount 만 올려주기
+  };
 
   console.log("cartList", cartList);
 
