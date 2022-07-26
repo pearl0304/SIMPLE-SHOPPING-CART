@@ -1,15 +1,21 @@
+import { FC } from "react";
 import { Grid } from "@mui/material";
-import { database } from "../database/products";
 import { Item } from "./Item";
 import { Wrapper } from "../css/mainList.styles";
+import { IShopItem } from "../interfaces/Items.interface";
 
-export const MainList = () => {
+type Props = {
+  database: IShopItem[];
+  addToCart: (item: IShopItem) => void;
+};
+
+export const MainList: FC<Props> = ({ database, addToCart }) => {
   return (
     <Wrapper>
       <Grid container spacing={5}>
-        {database.map((item) => (
+        {database.map((item: any) => (
           <Grid item key={item.id} xs={12} sm={3}>
-            <Item item={item} />
+            <Item item={item} addToCart={addToCart} />
           </Grid>
         ))}
       </Grid>
