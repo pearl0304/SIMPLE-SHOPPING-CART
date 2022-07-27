@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IconButton } from "@mui/material";
 
 export const Wrappter = styled.header`
   display: flex;
@@ -42,5 +43,12 @@ export const Wrappter = styled.header`
   .header-right {
     display: flex;
     align-items: center;
+  }
+
+  .count_badge {
+    position: absolute;
+    right: 65px;
+    top: 45px;
+    color: white;
   }
 `;

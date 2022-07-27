@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.nav`
-  margin-left: 20px;
   margin-top: 100px;
   background-color: #eee;
   width: 100%;
@@ -9,6 +8,7 @@ export const Wrapper = styled.nav`
   color: #aaa;
 
   .nav-ul {
+    margin-left: 20px;
     display: flex;
     height: 50px;
     line-height: 50px;

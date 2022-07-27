@@ -36,5 +36,6 @@ export const Wrapper = styled.div`
 
   .buttons Button {
     margin: 0 10px 0px 10px;
+    background-color: lightpink;
   }
 `;

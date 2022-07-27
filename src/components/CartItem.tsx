@@ -6,9 +6,10 @@ import { Button } from "@mui/material";
 type Props = {
   item: ICartItem;
   addToCart: (item: ICartItem) => void;
+  removeFromCart: (id: number) => void;
 };
 
-export const CartItem: FC<Props> = ({ item, addToCart }) => {
+export const CartItem: FC<Props> = ({ item, addToCart, removeFromCart }) => {
   const numberFormat = (price: number): string => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -26,7 +27,14 @@ export const CartItem: FC<Props> = ({ item, addToCart }) => {
         </div>
       </div>
       <div className="buttons">
-        <Button size="small" disableElevation variant="contained">
+        <Button
+          size="small"
+          disableElevation
+          variant="contained"
+          onClick={() => {
+            removeFromCart(item.id);
+          }}
+        >
           -
         </Button>
         {item.amount}

@@ -12,6 +12,7 @@ import { ICartItem } from "./interfaces/Items.interface";
 
 function App() {
   const [cartItem, setCartItem] = useState<ICartItem[]>([]);
+
   const handleAddToCart = (clikedItem: any) => {
     setCartItem((prev) => {
       const isItemInCart = cartItem.find((item) => item.id === clikedItem.id);
@@ -26,9 +27,31 @@ function App() {
     });
   };
 
+  const handleRemoveFromCart = (id: number) => {
+    setCartItem((prev) =>
+      prev.reduce((ack, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return ack;
+          return [...ack, { ...item, amount: item.amount - 1 }];
+        } else {
+          return [...ack, item];
+        }
+      }, [] as ICartItem[])
+    );
+  };
+
+  const getTotalItems = (items: ICartItem[]) => {
+    return items.reduce((ack, item) => ack + item.amount, 0);
+  };
+
   return (
     <Wrapper>
-      <Header cartItem={cartItem} addToCart={handleAddToCart} />
+      <Header
+        cartItem={cartItem}
+        addToCart={handleAddToCart}
+        removeFromCart={handleRemoveFromCart}
+        getTotalItems={getTotalItems}
+      />
       <Navbar />
       <MainList database={database} addToCart={handleAddToCart} />
       <Footer />
