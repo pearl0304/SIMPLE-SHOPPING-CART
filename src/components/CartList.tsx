@@ -1,7 +1,8 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Wrapper } from "../css/cartList.styles";
 import { ICartItem } from "../interfaces/Items.interface";
 import { CartItem } from "./CartItem";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 type Props = {
   cartItem: ICartItem[];
@@ -26,6 +27,7 @@ export const CartList: FC<Props> = ({
     <Wrapper>
       <div className="title">
         <h3>Your Shopping Cart</h3>
+        <CloseOutlinedIcon className="close" />
       </div>
       <div className={hidden}>
         {cartItem.map((item) => (

@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   border-bottom: 2px solid #eee;
+  margin-bottom: 40px;
 
   .thumb {
     width: 150px;
