@@ -1,17 +1,21 @@
+import { FC, useState } from "react";
 import { Wrapper } from "../css/navbar.styles";
-export const Navbar = () => {
+
+type Props = {
+  category: string[];
+};
+
+export const Navbar: FC<Props> = ({ category }) => {
+  const handleClick = (cate: string) => {};
+
+  const RenderLi = (cate: string, index: number) => {
+    return <li key={index}>{cate}</li>;
+  };
+
   return (
     <Wrapper>
       <ul className="nav-ul">
-        <li className="selected">All</li>
-        <li>KOAY</li>
-        <li>RJ</li>
-        <li>SHOOKY</li>
-        <li>MANG</li>
-        <li>CHIMMY</li>
-        <li>TATA</li>
-        <li>COOKY</li>
-        <li>VAN</li>
+        {category.map((item, index) => RenderLi(item, index))}
       </ul>
     </Wrapper>
   );
