@@ -23,12 +23,12 @@ export const Wrapper = styled.div`
     margin-bottom: 20px;
   }
 
-  .info h3 {
-    margin-bottom: 10px;
+  .info p {
+    margin-bottom: 5px;
   }
 
-  .info div p {
-    margin-bottom: 5px;
+  .info p:first-child {
+    font-weight: bold;
   }
 
   .buttons {

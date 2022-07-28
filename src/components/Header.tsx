@@ -5,6 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 import ViewHeadlineIcon from "@mui/icons-material/ViewHeadline";
 import Badge from "@mui/material/Badge";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import { CartList } from "./CartList";
 
 export const Header = (prop: any) => {
@@ -14,11 +15,7 @@ export const Header = (prop: any) => {
   return (
     <Wrappter>
       <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
-        <CartList
-          cartItem={cartItem}
-          addToCart={addToCart}
-          removeFromCart={removeFromCart}
-        />
+        <CartList cartItem={cartItem} addToCart={addToCart} removeFromCart={removeFromCart} />
       </Drawer>
       <div className="header-left">
         <div>
@@ -31,11 +28,7 @@ export const Header = (prop: any) => {
           <SearchIcon />
         </div>
         <div onClick={() => setCartOpen(true)}>
-          <Badge
-            className="count_badge"
-            badgeContent={getTotalItems(cartItem)}
-            color="error"
-          ></Badge>
+          <Badge className="count_badge" badgeContent={getTotalItems(cartItem)} color="error"></Badge>
           <ShoppingBasketOutlinedIcon />
         </div>
         <div>

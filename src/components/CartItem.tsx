@@ -20,11 +20,9 @@ export const CartItem: FC<Props> = ({ item, addToCart, removeFromCart }) => {
         <img src={item.image} alt={item.title}></img>
       </div>
       <div className="info">
-        <h3>{item.title}</h3>
-        <div>
-          <p>Price : {numberFormat(item.price)}원</p>
-          <p>Total : {numberFormat(item.amount * item.price)}원</p>
-        </div>
+        <p>{item.title}</p>
+        <p>Price : {numberFormat(item.price)}원</p>
+        <p>Total : {numberFormat(item.amount * item.price)}원</p>
       </div>
       <div className="buttons">
         <Button

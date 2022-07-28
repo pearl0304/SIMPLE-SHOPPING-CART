@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { database } from "./database/products";
 // Component
 import { Header } from "./components/Header";
@@ -17,11 +17,7 @@ function App() {
     setCartItem((prev) => {
       const isItemInCart = cartItem.find((item) => item.id === clikedItem.id);
       if (isItemInCart) {
-        return prev.map((item) =>
-          item.id === clikedItem.id
-            ? { ...item, amount: item.amount + 1 }
-            : item
-        );
+        return prev.map((item) => (item.id === clikedItem.id ? { ...item, amount: item.amount + 1 } : item));
       }
       return [{ ...clikedItem, amount: 1 }, ...prev];
     });
@@ -46,12 +42,7 @@ function App() {
 
   return (
     <Wrapper>
-      <Header
-        cartItem={cartItem}
-        addToCart={handleAddToCart}
-        removeFromCart={handleRemoveFromCart}
-        getTotalItems={getTotalItems}
-      />
+      <Header cartItem={cartItem} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} getTotalItems={getTotalItems} />
       <Navbar />
       <MainList database={database} addToCart={handleAddToCart} />
       <Footer />

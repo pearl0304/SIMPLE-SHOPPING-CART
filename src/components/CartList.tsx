@@ -2,18 +2,13 @@ import { FC, useState } from "react";
 import { Wrapper } from "../css/cartList.styles";
 import { ICartItem } from "../interfaces/Items.interface";
 import { CartItem } from "./CartItem";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 type Props = {
   cartItem: ICartItem[];
   addToCart: (clickedItem: ICartItem) => void;
   removeFromCart: (id: number) => void;
 };
-export const CartList: FC<Props> = ({
-  cartItem,
-  addToCart,
-  removeFromCart,
-}) => {
+export const CartList: FC<Props> = ({ cartItem, addToCart, removeFromCart }) => {
   const totalPrice = (items: ICartItem[]) => {
     return items.reduce((count, item) => count + item.amount * item.price, 0);
   };
@@ -21,22 +16,16 @@ export const CartList: FC<Props> = ({
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  const hidden = cartItem.length == 0 ? "hidden" : "";
+  const hidden = cartItem.length === 0 ? "hidden" : "";
 
   return (
     <Wrapper>
       <div className="title">
         <h3>Your Shopping Cart</h3>
-        <CloseOutlinedIcon className="close" />
       </div>
       <div className={hidden}>
         {cartItem.map((item) => (
-          <CartItem
-            key={item.id}
-            item={item}
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
-          />
+          <CartItem key={item.id} item={item} addToCart={addToCart} removeFromCart={removeFromCart} />
         ))}
         <div className="price">
           <span>

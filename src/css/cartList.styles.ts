@@ -7,7 +7,7 @@ export const Wrapper = styled.aside`
   .title {
     text-align: center;
     align-items: center;
-    margin: 15px 15px 40px 15px;
+    margin: 15px 10px 40px 10px;
     padding: 10px;
     display: flex;
     justify-content: space-evenly;
