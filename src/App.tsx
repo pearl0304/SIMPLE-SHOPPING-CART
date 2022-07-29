@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { database } from "./database/products";
 // Component
 import { Header } from "./components/Header";
@@ -8,7 +8,7 @@ import { Footer } from "./components/Footer";
 //Style
 import { Wrapper } from "./css/App.styles";
 // Interface
-import { ICartItem, IShopItem } from "./interfaces/Items.interface";
+import { ICartItem } from "./interfaces/Items.interface";
 
 // SET CATEGORY
 let result = database.map((item) => {
@@ -19,17 +19,12 @@ const category = Array.from(new Set(result)).sort();
 
 function App() {
   const [cartItem, setCartItem] = useState<ICartItem[]>([]);
-  const [data, setData] = useState<IShopItem[]>(database);
 
   const handleAddToCart = (clikedItem: any) => {
     setCartItem((prev) => {
       const isItemInCart = cartItem.find((item) => item.id === clikedItem.id);
       if (isItemInCart) {
-        return prev.map((item) =>
-          item.id === clikedItem.id
-            ? { ...item, amount: item.amount + 1 }
-            : item
-        );
+        return prev.map((item) => (item.id === clikedItem.id ? { ...item, amount: item.amount + 1 } : item));
       }
       return [{ ...clikedItem, amount: 1 }, ...prev];
     });
@@ -54,14 +49,9 @@ function App() {
 
   return (
     <Wrapper>
-      <Header
-        cartItem={cartItem}
-        addToCart={handleAddToCart}
-        removeFromCart={handleRemoveFromCart}
-        getTotalItems={getTotalItems}
-      />
+      <Header cartItem={cartItem} addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} getTotalItems={getTotalItems} />
       <Navbar category={category} />
-      <MainList database={data} addToCart={handleAddToCart} />
+      <MainList database={database} addToCart={handleAddToCart} />
       <Footer />
     </Wrapper>
   );

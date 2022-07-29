@@ -1,11 +1,10 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import { Drawer } from "@mui/material";
 import { Wrappter } from "../css/header.styles";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 import ViewHeadlineIcon from "@mui/icons-material/ViewHeadline";
 import Badge from "@mui/material/Badge";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import { CartList } from "./CartList";
 
 export const Header = (prop: any) => {

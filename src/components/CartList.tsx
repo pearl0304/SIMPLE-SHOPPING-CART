@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Wrapper } from "../css/cartList.styles";
 import { ICartItem } from "../interfaces/Items.interface";
 import { CartItem } from "./CartItem";
